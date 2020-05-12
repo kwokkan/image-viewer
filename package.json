@@ -1,0 +1,24 @@
+{
+  "name": "image-viewer",
+  "version": "1.0.0-alpha.1",
+  "description": "Image viewer.",
+  "main": "index.js",
+  "repository": "https://github.com/kwokkan/image-viewer.git",
+  "author": "kwokkan <kwokkan@users.noreply.github.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "parcel public/index.html",
+    "build:prod": "parcel build public/index.html"
+  },
+  "devDependencies": {
+    "parcel-bundler": "1.12.4",
+    "parcel-plugin-svelte": "4.0.6",
+    "sass": "1.26.5",
+    "svelte": "3.22.2",
+    "typescript": "3.8.3"
+  },
+  "browserslist": [
+    "current node",
+    "defaults"
+  ]
+}
