@@ -1,13 +1,19 @@
 <script>
-	export let name;
+  import NavigationButton from "./NavigationButton.svelte";
+
+  export let name;
 </script>
 
 <style>
-	.title {
-		font-weight: bold;
-	}
+  .title {
+    font-weight: bold;
+  }
 </style>
 
 <div class="title">
-	Image viewer for {name}
+  <NavigationButton text="<" />
+  
+  Image viewer for {name}
+  
+  <NavigationButton text=">" />
 </div>
