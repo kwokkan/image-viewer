@@ -7,10 +7,12 @@
   "author": "kwokkan <kwokkan@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
-    "build": "parcel public/index.html",
-    "build:prod": "parcel build public/index.html"
+    "build": "cross-env NODE_ENV=development parcel build public/index.html --no-content-hash --no-minify",
+    "build:prod": "parcel build public/index.html",
+    "watch": "parcel public/index.html"
   },
   "devDependencies": {
+    "cross-env": "7.0.2",
     "parcel-bundler": "1.12.4",
     "parcel-plugin-svelte": "4.0.6",
     "sass": "1.26.5",
