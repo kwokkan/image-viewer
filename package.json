@@ -11,12 +11,17 @@
     "build:prod": "parcel build public/index.html",
     "watch": "parcel public/index.html"
   },
+  "dependencies": {
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "rsuite": "4.6.0"
+  },
   "devDependencies": {
+    "@types/react": "16.9.35",
+    "@types/react-dom": "16.9.8",
     "cross-env": "7.0.2",
     "parcel-bundler": "1.12.4",
-    "parcel-plugin-svelte": "4.0.6",
     "sass": "1.26.5",
-    "svelte": "3.22.2",
     "typescript": "3.9.2"
   },
   "browserslist": [

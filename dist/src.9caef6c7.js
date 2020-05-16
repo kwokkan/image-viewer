@@ -2234,7 +2234,9 @@ function create_fragment(ctx) {
       (0, _internal.insert)(target, button, anchor);
       (0, _internal.append)(button, t);
       if (remount) dispose();
-      dispose = (0, _internal.listen)(button, "click", onClick);
+      dispose = (0, _internal.listen)(button, "click",
+      /*onClick*/
+      ctx[1]);
     },
     p: function p(ctx, _ref) {
       var _ref2 = _slicedToArray(_ref, 1),
@@ -2255,10 +2257,12 @@ function create_fragment(ctx) {
   };
 }
 
-function onClick() {}
-
 function instance($$self, $$props, $$invalidate) {
   var text = $$props.text;
+
+  function onClick() {
+    alert(text);
+  }
 
   $$self.$set = function ($$props) {
     if ("text" in $$props) $$invalidate(0, text = $$props.text);
@@ -2289,7 +2293,7 @@ var NavigationButton = /*#__PURE__*/function (_SvelteComponent) {
   _createClass(NavigationButton, [{
     key: "onClick",
     get: function get() {
-      return onClick;
+      return this.$$.ctx[1];
     }
   }]);
 
@@ -2297,6 +2301,122 @@ var NavigationButton = /*#__PURE__*/function (_SvelteComponent) {
 }(_internal.SvelteComponent);
 
 var _default = NavigationButton;
+exports.default = _default;
+},{"svelte/internal":"YkLP"}],"Ic58":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _internal = require("svelte/internal");
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function () { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function create_fragment(ctx) {
+  var img;
+  var img_src_value;
+  return {
+    c: function c() {
+      img = (0, _internal.element)("img");
+      if (img.src !== (img_src_value =
+      /*src*/
+      ctx[0])) (0, _internal.attr)(img, "src", img_src_value);
+      (0, _internal.attr)(img, "alt",
+      /*src*/
+      ctx[0]);
+    },
+    m: function m(target, anchor) {
+      (0, _internal.insert)(target, img, anchor);
+    },
+    p: function p(ctx, _ref) {
+      var _ref2 = _slicedToArray(_ref, 1),
+          dirty = _ref2[0];
+
+      if (dirty &
+      /*src*/
+      1 && img.src !== (img_src_value =
+      /*src*/
+      ctx[0])) {
+        (0, _internal.attr)(img, "src", img_src_value);
+      }
+
+      if (dirty &
+      /*src*/
+      1) {
+        (0, _internal.attr)(img, "alt",
+        /*src*/
+        ctx[0]);
+      }
+    },
+    i: _internal.noop,
+    o: _internal.noop,
+    d: function d(detaching) {
+      if (detaching) (0, _internal.detach)(img);
+    }
+  };
+}
+
+function instance($$self, $$props, $$invalidate) {
+  var src = $$props.src;
+
+  $$self.$set = function ($$props) {
+    if ("src" in $$props) $$invalidate(0, src = $$props.src);
+  };
+
+  return [src];
+}
+
+var Image = /*#__PURE__*/function (_SvelteComponent) {
+  _inherits(Image, _SvelteComponent);
+
+  var _super = _createSuper(Image);
+
+  function Image(options) {
+    var _this;
+
+    _classCallCheck(this, Image);
+
+    _this = _super.call(this);
+    (0, _internal.init)(_assertThisInitialized(_this), options, instance, create_fragment, _internal.safe_not_equal, {
+      src: 0
+    });
+    return _this;
+  }
+
+  return Image;
+}(_internal.SvelteComponent);
+
+var _default = Image;
 exports.default = _default;
 },{"svelte/internal":"YkLP"}],"hk42":[function(require,module,exports) {
 "use strict";
@@ -2309,6 +2429,8 @@ exports.default = void 0;
 var _internal = require("svelte/internal");
 
 var _NavigationButton = _interopRequireDefault(require("./NavigationButton.svelte"));
+
+var _Image = _interopRequireDefault(require("./Image.svelte"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2344,46 +2466,73 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function add_css() {
   var style = (0, _internal.element)("style");
-  style.id = "svelte-1oedvhf-style";
-  style.textContent = ".title.svelte-1oedvhf{font-weight:bold}";
+  style.id = "svelte-1l1cgy-style";
+  style.textContent = "main.svelte-1l1cgy{width:100%}.title.svelte-1l1cgy{font-weight:bold}.previous.svelte-1l1cgy{left:0;height:100%;position:absolute}.next.svelte-1l1cgy{right:0;height:100%;position:absolute}.previous.svelte-1l1cgy>*,.next.svelte-1l1cgy>*{height:100%;background-color:blue}";
   (0, _internal.append)(document.head, style);
 }
 
 function create_fragment(ctx) {
-  var div;
+  var main;
+  var div0;
   var t0;
+  var div1;
   var t1;
   var t2;
+  var t3;
+  var t4;
+  var div2;
   var current;
   var navigationbutton0 = new _NavigationButton.default({
     props: {
-      text: "<"
+      text: "<",
+      class: "previous"
+    }
+  });
+  var image = new _Image.default({
+    props: {
+      src: "1.jpg"
     }
   });
   var navigationbutton1 = new _NavigationButton.default({
     props: {
-      text: ">"
+      text: ">",
+      class: "next"
     }
   });
   return {
     c: function c() {
-      div = (0, _internal.element)("div");
+      main = (0, _internal.element)("main");
+      div0 = (0, _internal.element)("div");
       (0, _internal.create_component)(navigationbutton0.$$.fragment);
-      t0 = (0, _internal.text)("\r\n  \r\n  Image viewer for ");
-      t1 = (0, _internal.text)(
+      t0 = (0, _internal.space)();
+      div1 = (0, _internal.element)("div");
+      t1 = (0, _internal.text)("Image viewer for ");
+      t2 = (0, _internal.text)(
       /*name*/
       ctx[0]);
-      t2 = (0, _internal.space)();
+      t3 = (0, _internal.space)();
+      (0, _internal.create_component)(image.$$.fragment);
+      t4 = (0, _internal.space)();
+      div2 = (0, _internal.element)("div");
       (0, _internal.create_component)(navigationbutton1.$$.fragment);
-      (0, _internal.attr)(div, "class", "title svelte-1oedvhf");
+      (0, _internal.attr)(div0, "class", "previous svelte-1l1cgy");
+      (0, _internal.attr)(div1, "class", "title svelte-1l1cgy");
+      (0, _internal.attr)(div2, "class", "next svelte-1l1cgy");
+      (0, _internal.attr)(main, "class", "svelte-1l1cgy");
     },
     m: function m(target, anchor) {
-      (0, _internal.insert)(target, div, anchor);
-      (0, _internal.mount_component)(navigationbutton0, div, null);
-      (0, _internal.append)(div, t0);
-      (0, _internal.append)(div, t1);
-      (0, _internal.append)(div, t2);
-      (0, _internal.mount_component)(navigationbutton1, div, null);
+      (0, _internal.insert)(target, main, anchor);
+      (0, _internal.append)(main, div0);
+      (0, _internal.mount_component)(navigationbutton0, div0, null);
+      (0, _internal.append)(main, t0);
+      (0, _internal.append)(main, div1);
+      (0, _internal.append)(div1, t1);
+      (0, _internal.append)(div1, t2);
+      (0, _internal.append)(main, t3);
+      (0, _internal.mount_component)(image, main, null);
+      (0, _internal.append)(main, t4);
+      (0, _internal.append)(main, div2);
+      (0, _internal.mount_component)(navigationbutton1, div2, null);
       current = true;
     },
     p: function p(ctx, _ref) {
@@ -2392,24 +2541,27 @@ function create_fragment(ctx) {
 
       if (!current || dirty &
       /*name*/
-      1) (0, _internal.set_data)(t1,
+      1) (0, _internal.set_data)(t2,
       /*name*/
       ctx[0]);
     },
     i: function i(local) {
       if (current) return;
       (0, _internal.transition_in)(navigationbutton0.$$.fragment, local);
+      (0, _internal.transition_in)(image.$$.fragment, local);
       (0, _internal.transition_in)(navigationbutton1.$$.fragment, local);
       current = true;
     },
     o: function o(local) {
       (0, _internal.transition_out)(navigationbutton0.$$.fragment, local);
+      (0, _internal.transition_out)(image.$$.fragment, local);
       (0, _internal.transition_out)(navigationbutton1.$$.fragment, local);
       current = false;
     },
     d: function d(detaching) {
-      if (detaching) (0, _internal.detach)(div);
+      if (detaching) (0, _internal.detach)(main);
       (0, _internal.destroy_component)(navigationbutton0);
+      (0, _internal.destroy_component)(image);
       (0, _internal.destroy_component)(navigationbutton1);
     }
   };
@@ -2436,7 +2588,7 @@ var App = /*#__PURE__*/function (_SvelteComponent) {
     _classCallCheck(this, App);
 
     _this = _super.call(this);
-    if (!document.getElementById("svelte-1oedvhf-style")) add_css();
+    if (!document.getElementById("svelte-1l1cgy-style")) add_css();
     (0, _internal.init)(_assertThisInitialized(_this), options, instance, create_fragment, _internal.safe_not_equal, {
       name: 0
     });
@@ -2448,7 +2600,7 @@ var App = /*#__PURE__*/function (_SvelteComponent) {
 
 var _default = App;
 exports.default = _default;
-},{"svelte/internal":"YkLP","./NavigationButton.svelte":"whXU"}],"fUdq":[function(require,module,exports) {
+},{"svelte/internal":"YkLP","./NavigationButton.svelte":"whXU","./Image.svelte":"Ic58"}],"fUdq":[function(require,module,exports) {
 "use strict";
 
 var __importDefault = this && this.__importDefault || function (mod) {

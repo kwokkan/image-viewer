@@ -1,0 +1,23 @@
+{
+	"compilerOptions": {
+		"allowJs": true,
+		"allowSyntheticDefaultImports": true,
+		"assumeChangesOnlyAffectDirectDependencies": true,
+		"forceConsistentCasingInFileNames": true,
+		"jsx": "react",
+		"lib": [
+			"DOM",
+			"ESNext"
+		],
+		"module": "ESNext",
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitReturns": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"strict": true,
+		"target": "ESNext"
+	},
+	"include": [
+		"src/**/*"
+	]
+}
