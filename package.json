@@ -9,6 +9,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=development parcel build public/index.html --no-content-hash --no-minify",
     "build:prod": "parcel build public/index.html",
+    "serve": "ts-node --project tsconfig.server.json src/server/app.ts",
     "watch": "parcel public/index.html"
   },
   "dependencies": {
@@ -17,11 +18,15 @@
     "rsuite": "4.6.0"
   },
   "devDependencies": {
+    "@types/express": "4.17.6",
+    "@types/node": "14.0.1",
     "@types/react": "16.9.35",
     "@types/react-dom": "16.9.8",
     "cross-env": "7.0.2",
+    "express": "4.17.1",
     "parcel-bundler": "1.12.4",
     "sass": "1.26.5",
+    "ts-node": "8.10.1",
     "typescript": "3.9.2"
   },
   "browserslist": [
