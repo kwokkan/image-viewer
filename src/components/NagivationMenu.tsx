@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { DataItemType, Icon, Nav, Sidebar, Sidenav, Tree } from "rsuite";
+import { DataItemType, Dropdown, Icon, Nav, Sidebar, Sidenav, Tree } from "rsuite";
+import { IFileNode } from "../types/IFileNode";
 
 export interface INavigationMenuProps {
     items: DataItemType[];
+    onFileNodeSelected?: (fileNode: IFileNode) => void;
 }
 
 export function NavigationMenu(props: INavigationMenuProps): JSX.Element {
@@ -12,21 +14,27 @@ export function NavigationMenu(props: INavigationMenuProps): JSX.Element {
         setExpanded(!expanded);
     };
 
-    const sidebarTreeOnSelect = () => {
+    const sidebarTreeOnSelect = (_activeNode: DataItemType, value: IFileNode, _event: any) => {
+        if (props.onFileNodeSelected) {
+            props.onFileNodeSelected(value);
+        }
     };
 
     return (
         <Sidebar collapsible width={expanded ? 260 : 56}>
-            <Sidenav expanded={expanded} appearance="subtle">
+            <Sidenav expanded={expanded}>
                 <Sidenav.Body>
                     <Nav>
                         <Nav.Item eventKey="1" onClick={sideBarClick} active icon={<Icon icon={expanded ? "close" : "bars"} />}>
                             Viewer
-                                </Nav.Item>
-
-                        <Nav.Item eventKey="2" icon={<Icon icon="folder" />}>
-                            <Tree data={props.items} defaultExpandAll onSelect={sidebarTreeOnSelect} />
                         </Nav.Item>
+
+                        <Dropdown eventKey="2" title="Files" icon={<Icon icon="folder" />}>
+                            <Dropdown.Item divider />
+                            <Dropdown.Item >
+                                <Tree data={props.items} defaultExpandAll onSelect={sidebarTreeOnSelect} />
+                            </Dropdown.Item>
+                        </Dropdown>
                     </Nav>
                 </Sidenav.Body>
             </Sidenav>

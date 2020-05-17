@@ -10,12 +10,20 @@ const basePath = path.resolve(process.cwd(), "src");
 
 app.use(express.static("dist"));
 
-app.get("/api/files(/:path)?", async (req, res) => {
-    const currentPath = path.resolve(basePath, req.params.path || "");
+app.get("/api/browse/*?", async (req, res) => {
+    const currentPath = path.resolve(basePath, req.params[0] || "");
 
-    const files: IFileNode[] = await getFileNodes(currentPath, true);
+    console.debug("Browse", currentPath);
+    const files: IFileNode[] = await getFileNodes(basePath, currentPath, true);
 
     res.send(files);
+});
+
+app.get("/api/view/*?", async (req, res) => {
+    const currentPath = path.resolve(basePath, req.params[0] || "");
+
+    console.debug("View", currentPath);
+    res.sendFile(currentPath);
 });
 
 app.listen(port, () => console.log("App is listening on port " + port));

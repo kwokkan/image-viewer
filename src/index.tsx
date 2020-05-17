@@ -5,6 +5,6 @@ import { App } from "./components/App";
 import "rsuite/dist/styles/rsuite-default.css";
 
 render(
-    <App />,
+    <App apiPrefix="/api/" />,
     document.getElementById("app")
 );

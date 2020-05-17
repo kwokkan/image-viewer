@@ -3,7 +3,7 @@ import * as rpath from "path";
 import { FileNodeType } from "../types/FileNodeType";
 import { IFileNode } from "../types/IFileNode";
 
-export async function getFileNodes(path: string, recurse: boolean): Promise<IFileNode[]> {
+export async function getFileNodes(basePath: string, path: string, recurse: boolean): Promise<IFileNode[]> {
     const files: IFileNode[] = [];
 
     if (fs.existsSync(path)) {
@@ -19,16 +19,16 @@ export async function getFileNodes(path: string, recurse: boolean): Promise<IFil
                     break;
                 }
 
+                const currentPath = rpath.resolve(path, currentDirent.name);
                 let currentFileNode: IFileNode = {
                     name: currentDirent.name,
-                    path: currentDirent.name,
+                    path: rpath.relative(basePath, currentPath),
                     type: currentDirent.isDirectory() ? FileNodeType.Directory : FileNodeType.File
                 };
                 files.push(currentFileNode);
 
                 if (recurse && currentFileNode.type == FileNodeType.Directory) {
-                    const childPath = rpath.resolve(path, currentDirent.name);
-                    const children = await getFileNodes(childPath, recurse);
+                    const children = await getFileNodes(basePath, currentPath, recurse);
 
                     if (children.length) {
                         currentFileNode.children = children;

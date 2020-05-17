@@ -91669,7 +91669,21 @@ var _DOMHelper = _interopRequireDefault(require("./DOMHelper"));
 var _Affix = _interopRequireDefault(require("./Affix"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./Button":"HB9W","./IconButton":"DTIg","./ButtonToolbar":"qi5J","./ButtonGroup":"ukVR","./Whisper":"UUSP","./Tooltip":"ylOy","./Popover":"KFBo","./Modal":"JBSQ","./Alert":"mt1W","./Notification":"OSzW","./Message":"EVGj","./Drawer":"Idze","./Loader":"TtZy","./Icon":"mhDx","./IconStack":"MM6m","./SafeAnchor":"ne8j","./Divider":"GNUH","./Placeholder":"ClTJ","./Badge":"p6LR","./Avatar":"cdUQ","./Dropdown":"F43o","./Nav":"hYIT","./Navbar":"YMU2","./Sidenav":"xTML","./Breadcrumb":"lMdy","./Pagination":"lO7j","./Steps":"V5ZO","./Toggle":"KphQ","./Form":"o0SN","./FormGroup":"E4vP","./ErrorMessage":"sxXi","./ControlLabel":"tijp","./HelpBlock":"AMsI","./FormControl":"jW8h","./Input":"yyoh","./InputNumber":"CnC9","./InputGroup":"Ksdy","./Checkbox":"SnKz","./CheckboxGroup":"qSCk","./Radio":"eVKf","./RadioGroup":"qfBj","./SelectPicker":"Qzia","./CheckPicker":"SLPP","./InputPicker":"xmHa","./TagPicker":"MdrD","./TreePicker":"hSZK","./CheckTreePicker":"nET1","./Cascader":"wiJD","./MultiCascader":"Yuuu","./DatePicker":"XRc3","./DateRangePicker":"dEVZ","./AutoComplete":"gZp3","./Uploader":"YRfL","./Slider":"uO3P","./RangeSlider":"nFFM","./Rate":"yOeC","./Tree":"SfDi","./CheckTree":"qkUA","./Panel":"hMRs","./PanelGroup":"fjwK","./Table":"LE8W","./Progress":"Negp","./Timeline":"oJVG","./Tag":"IKYN","./TagGroup":"Wl2A","./List":"Hwxd","./Calendar":"vBhi","./Carousel":"AgIh","./Grid":"iXLe","./Row":"iDKA","./Col":"VCkO","./FlexboxGrid":"mV9E","./Container":"fyo7","./Content":"YHA7","./Header":"z6Dh","./Sidebar":"bnfY","./Footer":"o11D","./Schema":"KIOy","./Animation":"huWE","./IntlProvider":"gCuh","./Portal":"QpW1","./DOMHelper":"hxaj","./Affix":"dLMP"}],"Y3SL":[function(require,module,exports) {
+},{"./Button":"HB9W","./IconButton":"DTIg","./ButtonToolbar":"qi5J","./ButtonGroup":"ukVR","./Whisper":"UUSP","./Tooltip":"ylOy","./Popover":"KFBo","./Modal":"JBSQ","./Alert":"mt1W","./Notification":"OSzW","./Message":"EVGj","./Drawer":"Idze","./Loader":"TtZy","./Icon":"mhDx","./IconStack":"MM6m","./SafeAnchor":"ne8j","./Divider":"GNUH","./Placeholder":"ClTJ","./Badge":"p6LR","./Avatar":"cdUQ","./Dropdown":"F43o","./Nav":"hYIT","./Navbar":"YMU2","./Sidenav":"xTML","./Breadcrumb":"lMdy","./Pagination":"lO7j","./Steps":"V5ZO","./Toggle":"KphQ","./Form":"o0SN","./FormGroup":"E4vP","./ErrorMessage":"sxXi","./ControlLabel":"tijp","./HelpBlock":"AMsI","./FormControl":"jW8h","./Input":"yyoh","./InputNumber":"CnC9","./InputGroup":"Ksdy","./Checkbox":"SnKz","./CheckboxGroup":"qSCk","./Radio":"eVKf","./RadioGroup":"qfBj","./SelectPicker":"Qzia","./CheckPicker":"SLPP","./InputPicker":"xmHa","./TagPicker":"MdrD","./TreePicker":"hSZK","./CheckTreePicker":"nET1","./Cascader":"wiJD","./MultiCascader":"Yuuu","./DatePicker":"XRc3","./DateRangePicker":"dEVZ","./AutoComplete":"gZp3","./Uploader":"YRfL","./Slider":"uO3P","./RangeSlider":"nFFM","./Rate":"yOeC","./Tree":"SfDi","./CheckTree":"qkUA","./Panel":"hMRs","./PanelGroup":"fjwK","./Table":"LE8W","./Progress":"Negp","./Timeline":"oJVG","./Tag":"IKYN","./TagGroup":"Wl2A","./List":"Hwxd","./Calendar":"vBhi","./Carousel":"AgIh","./Grid":"iXLe","./Row":"iDKA","./Col":"VCkO","./FlexboxGrid":"mV9E","./Container":"fyo7","./Content":"YHA7","./Header":"z6Dh","./Sidebar":"bnfY","./Footer":"o11D","./Schema":"KIOy","./Animation":"huWE","./IntlProvider":"gCuh","./Portal":"QpW1","./DOMHelper":"hxaj","./Affix":"dLMP"}],"awbP":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.FileNodeType = void 0;
+var FileNodeType;
+exports.FileNodeType = FileNodeType;
+
+(function (FileNodeType) {
+  FileNodeType[FileNodeType["Directory"] = 0] = "Directory";
+  FileNodeType[FileNodeType["File"] = 1] = "File";
+})(FileNodeType || (exports.FileNodeType = FileNodeType = {}));
+},{}],"Y3SL":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -91707,14 +91721,17 @@ function NavigationMenu(props) {
     setExpanded(!expanded);
   };
 
-  var sidebarTreeOnSelect = function sidebarTreeOnSelect() {};
+  var sidebarTreeOnSelect = function sidebarTreeOnSelect(_activeNode, value, _event) {
+    if (props.onFileNodeSelected) {
+      props.onFileNodeSelected(value);
+    }
+  };
 
   return _react.default.createElement(_rsuite.Sidebar, {
     collapsible: true,
     width: expanded ? 260 : 56
   }, _react.default.createElement(_rsuite.Sidenav, {
-    expanded: expanded,
-    appearance: "subtle"
+    expanded: expanded
   }, _react.default.createElement(_rsuite.Sidenav.Body, null, _react.default.createElement(_rsuite.Nav, null, _react.default.createElement(_rsuite.Nav.Item, {
     eventKey: "1",
     onClick: sideBarClick,
@@ -91722,16 +91739,19 @@ function NavigationMenu(props) {
     icon: _react.default.createElement(_rsuite.Icon, {
       icon: expanded ? "close" : "bars"
     })
-  }, "Viewer"), _react.default.createElement(_rsuite.Nav.Item, {
+  }, "Viewer"), _react.default.createElement(_rsuite.Dropdown, {
     eventKey: "2",
+    title: "Files",
     icon: _react.default.createElement(_rsuite.Icon, {
       icon: "folder"
     })
-  }, _react.default.createElement(_rsuite.Tree, {
+  }, _react.default.createElement(_rsuite.Dropdown.Item, {
+    divider: true
+  }), _react.default.createElement(_rsuite.Dropdown.Item, null, _react.default.createElement(_rsuite.Tree, {
     data: props.items,
     defaultExpandAll: true,
     onSelect: sidebarTreeOnSelect
-  }))))));
+  })))))));
 }
 },{"react":"n8MK","rsuite":"JnKi"}],"UJ63":[function(require,module,exports) {
 "use strict";
@@ -91744,6 +91764,8 @@ exports.App = App;
 var _react = _interopRequireWildcard(require("react"));
 
 var _rsuite = require("rsuite");
+
+var _FileNodeType = require("../types/FileNodeType");
 
 var _NagivationMenu = require("./NagivationMenu");
 
@@ -91771,18 +91793,23 @@ function parseTreeJson(files) {
   var tree = files.map(function (x) {
     return {
       label: x.name,
-      value: x.name,
+      value: x,
       children: x.children ? parseTreeJson(x.children) : null
     };
   });
   return tree;
 }
 
-function App() {
+function App(props) {
   var _useState = (0, _react.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
       files = _useState2[0],
       setFiles = _useState2[1];
+
+  var _useState3 = (0, _react.useState)([]),
+      _useState4 = _slicedToArray(_useState3, 2),
+      displayUrls = _useState4[0],
+      setDisplayUrls = _useState4[1];
 
   (0, _react.useEffect)(function () {
     function init() {
@@ -91797,7 +91824,7 @@ function App() {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return fetch("/api/files");
+                return fetch("".concat(props.apiPrefix, "browse/"));
 
               case 2:
                 response = _context.sent;
@@ -91806,11 +91833,10 @@ function App() {
 
               case 5:
                 json = _context.sent;
-                console.debug(json);
                 treeData = parseTreeJson(json);
                 setFiles(treeData);
 
-              case 9:
+              case 8:
               case "end":
                 return _context.stop();
             }
@@ -91822,13 +91848,36 @@ function App() {
 
     init();
   }, []);
+
+  var onFileNodeSelected = function onFileNodeSelected(fileNode) {
+    console.debug(fileNode);
+
+    if (fileNode.type == _FileNodeType.FileNodeType.Directory) {
+      if (fileNode.children) {
+        setDisplayUrls(fileNode.children.map(function (x) {
+          return x.path;
+        }));
+      } else {
+        setDisplayUrls([]);
+      }
+    } else {
+      setDisplayUrls([fileNode.path]);
+    }
+  };
+
   return _react.default.createElement("div", {
     className: "show-container"
   }, _react.default.createElement(_rsuite.Container, null, _react.default.createElement(_NagivationMenu.NavigationMenu, {
-    items: files
-  }), _react.default.createElement(_rsuite.Container, null, _react.default.createElement(_rsuite.Header, null, "Header"), _react.default.createElement(_rsuite.Content, null, "Content"))));
+    items: files,
+    onFileNodeSelected: onFileNodeSelected
+  }), _react.default.createElement(_rsuite.Container, null, _react.default.createElement(_rsuite.Content, null, displayUrls.length == 0 ? _react.default.createElement("div", null, "Nothing to display") : displayUrls.map(function (x) {
+    return _react.default.createElement("img", {
+      src: "".concat(props.apiPrefix, "view/").concat(x),
+      alt: x
+    });
+  })))));
 }
-},{"react":"n8MK","rsuite":"JnKi","./NagivationMenu":"Y3SL"}],"wGC4":[function(require,module,exports) {
+},{"react":"n8MK","rsuite":"JnKi","../types/FileNodeType":"awbP","./NagivationMenu":"Y3SL"}],"wGC4":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -91841,6 +91890,8 @@ require("rsuite/dist/styles/rsuite-default.css");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _reactDom.render)(_react.default.createElement(_App.App, null), document.getElementById("app"));
+(0, _reactDom.render)(_react.default.createElement(_App.App, {
+  apiPrefix: "/api/"
+}), document.getElementById("app"));
 },{"react":"n8MK","react-dom":"NKHc","./components/App":"UJ63","rsuite/dist/styles/rsuite-default.css":"tuDi"}]},{},["wGC4"], null)
 //# sourceMappingURL=/src.62c16509.js.map
