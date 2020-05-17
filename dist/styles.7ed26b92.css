@@ -1,5 +1,13 @@
+.rs-container {
+  max-width: 100%;
+}
+
 * {
   box-sizing: border-box;
+}
+
+.max-width {
+  max-width: 100%;
 }
 
 /*# sourceMappingURL=/styles.7ed26b92.css.map */

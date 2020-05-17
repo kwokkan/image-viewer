@@ -62,7 +62,7 @@ export function App(props: IAppProps): JSX.Element {
                             <div>Nothing to display</div>
                             :
                             displayUrls.map(x =>
-                                <img src={`${props.apiPrefix}view/${x}`} alt={x} />
+                                <img className="max-width" src={`${props.apiPrefix}view/${x}`} alt={x} />
                             )
                         }
                     </Content>

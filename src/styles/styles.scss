@@ -1,7 +1,9 @@
+@import "overrides.scss";
 
 * {
     box-sizing: border-box;
 }
 
-html {
+.max-width {
+    max-width: 100%;
 }
