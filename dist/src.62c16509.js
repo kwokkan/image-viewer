@@ -91767,6 +91767,17 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
+function parseTreeJson(files) {
+  var tree = files.map(function (x) {
+    return {
+      label: x.name,
+      value: x.name,
+      children: x.children ? parseTreeJson(x.children) : null
+    };
+  });
+  return tree;
+}
+
 function App() {
   var _useState = (0, _react.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
@@ -91796,12 +91807,7 @@ function App() {
               case 5:
                 json = _context.sent;
                 console.debug(json);
-                treeData = json.map(function (x) {
-                  return {
-                    label: x.name,
-                    value: x.name
-                  };
-                });
+                treeData = parseTreeJson(json);
                 setFiles(treeData);
 
               case 9:

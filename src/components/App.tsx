@@ -3,6 +3,18 @@ import { Container, Content, DataItemType, Header } from "rsuite";
 import { IFileNode } from "../types/IFileNode";
 import { NavigationMenu } from "./NagivationMenu";
 
+function parseTreeJson(files: IFileNode[]): DataItemType[] {
+    const tree: DataItemType[] =
+
+        files.map(x => ({
+            label: x.name,
+            value: x.name,
+            children: x.children ? parseTreeJson(x!.children) : null
+        }));
+
+    return tree;
+}
+
 export function App(): JSX.Element {
     const [files, setFiles] = useState<DataItemType[]>([]);
 
@@ -12,7 +24,7 @@ export function App(): JSX.Element {
             const json = await response.json() as IFileNode[];
             console.debug(json);
 
-            const treeData = json.map(x => ({ label: x.name, value: x.name }));
+            const treeData = parseTreeJson(json);
             setFiles(treeData);
         }
 
