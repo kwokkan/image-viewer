@@ -91875,6 +91875,7 @@ function App(props) {
     onFileNodeSelected: onFileNodeSelected
   }), _react.default.createElement(_rsuite.Container, null, _react.default.createElement(_rsuite.Content, null, displayUrls.length == 0 ? _react.default.createElement("div", null, "Nothing to display") : displayUrls.map(function (x) {
     return _react.default.createElement("img", {
+      key: x,
       className: "max-width",
       src: "".concat(props.apiPrefix, "view/").concat(x),
       alt: x
