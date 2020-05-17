@@ -60,7 +60,7 @@ export function App(props: IAppProps): JSX.Element {
             <Container>
                 <NavigationMenu items={files} onFileNodeSelected={onFileNodeSelected} />
                 <Container>
-                    <Content>
+                    <Content className="m-auto">
                         {displayItems.length == 0 ?
                             <div>Nothing to display</div>
                             :
