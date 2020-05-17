@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { Container, Content, DataItemType } from "rsuite";
+import { Container, Content } from "rsuite";
+import { ItemDataType } from "rsuite/lib/@types/common";
 import { FileNodeType } from "../types/FileNodeType";
 import { IFileNode } from "../types/IFileNode";
 import { FileItem } from "./FileItem";
 import { NavigationMenu } from "./NagivationMenu";
 
-function parseTreeJson(files: IFileNode[]): DataItemType[] {
-    const tree: DataItemType[] =
+function parseTreeJson(files: IFileNode[]): ItemDataType[] {
+    const tree: ItemDataType[] =
 
         files.map(x => ({
             label: x.name,
             value: x,
-            children: x.children ? parseTreeJson(x!.children) : null
+            children: x.children ? parseTreeJson(x.children) : undefined
         }));
 
     return tree;
@@ -22,7 +23,7 @@ interface IAppProps {
 }
 
 export function App(props: IAppProps): JSX.Element {
-    const [files, setFiles] = useState<DataItemType[]>([]);
+    const [files, setFiles] = useState<ItemDataType[]>([]);
     const [displayItems, setDisplayItems] = useState<IFileNode[]>([]);
 
     useEffect(() => {

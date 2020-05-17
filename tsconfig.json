@@ -10,6 +10,7 @@
 			"ESNext"
 		],
 		"module": "ESNext",
+		"moduleResolution": "Node",
 		"noFallthroughCasesInSwitch": true,
 		"noImplicitReturns": true,
 		"noUnusedLocals": true,

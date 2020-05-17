@@ -91818,7 +91818,7 @@ function parseTreeJson(files) {
     return {
       label: x.name,
       value: x,
-      children: x.children ? parseTreeJson(x.children) : null
+      children: x.children ? parseTreeJson(x.children) : undefined
     };
   });
   return tree;

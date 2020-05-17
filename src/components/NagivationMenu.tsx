@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { DataItemType, Dropdown, Icon, Nav, Sidebar, Sidenav, Tree } from "rsuite";
+import { Dropdown, Icon, Nav, Sidebar, Sidenav, Tree } from "rsuite";
+import { ItemDataType } from "rsuite/lib/@types/common";
 import { IFileNode } from "../types/IFileNode";
 
 export interface INavigationMenuProps {
-    items: DataItemType[];
+    items: ItemDataType[];
     onFileNodeSelected?: (fileNode: IFileNode) => void;
 }
 
@@ -14,7 +15,7 @@ export function NavigationMenu(props: INavigationMenuProps): JSX.Element {
         setExpanded(!expanded);
     };
 
-    const sidebarTreeOnSelect = (_activeNode: DataItemType, value: IFileNode, _event: any) => {
+    const sidebarTreeOnSelect = (_activeNode: ItemDataType, value: IFileNode, _event: any) => {
         if (props.onFileNodeSelected) {
             props.onFileNodeSelected(value);
         }
