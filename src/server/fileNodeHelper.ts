@@ -1,8 +1,7 @@
+import * as fs from "fs";
+import * as rpath from "path";
 import { FileNodeType } from "../types/FileNodeType";
 import { IFileNode } from "../types/IFileNode";
-
-import fs = require("fs");
-import rpath = require("path");
 
 export async function getFileNodes(path: string, recurse: boolean): Promise<IFileNode[]> {
     const files: IFileNode[] = [];
