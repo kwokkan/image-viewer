@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Container, Content, DataItemType } from "rsuite";
 import { FileNodeType } from "../types/FileNodeType";
 import { IFileNode } from "../types/IFileNode";
+import { FileItem } from "./FileItem";
 import { NavigationMenu } from "./NagivationMenu";
 
 function parseTreeJson(files: IFileNode[]): DataItemType[] {
@@ -22,7 +23,7 @@ interface IAppProps {
 
 export function App(props: IAppProps): JSX.Element {
     const [files, setFiles] = useState<DataItemType[]>([]);
-    const [displayUrls, setDisplayUrls] = useState<string[]>([]);
+    const [displayItems, setDisplayItems] = useState<IFileNode[]>([]);
 
     useEffect(() => {
         async function init() {
@@ -39,17 +40,17 @@ export function App(props: IAppProps): JSX.Element {
     const onFileNodeSelected = (fileNode: IFileNode) => {
         console.debug(fileNode);
 
-        setDisplayUrls([]);
+        setDisplayItems([]);
         document.title = fileNode.path + " - Image Viewer";
         window.scrollTo(0, 0);
 
         if (fileNode.type == FileNodeType.Directory) {
             if (fileNode.children) {
-                setDisplayUrls(fileNode.children.map(x => x.path));
+                setDisplayItems(fileNode.children);
             }
         }
         else {
-            setDisplayUrls([fileNode.path]);
+            setDisplayItems([fileNode]);
         }
     };
 
@@ -59,11 +60,11 @@ export function App(props: IAppProps): JSX.Element {
                 <NavigationMenu items={files} onFileNodeSelected={onFileNodeSelected} />
                 <Container>
                     <Content>
-                        {displayUrls.length == 0 ?
+                        {displayItems.length == 0 ?
                             <div>Nothing to display</div>
                             :
-                            displayUrls.map(x =>
-                                <img key={x} className="max-width" src={`${props.apiPrefix}view/${x}`} alt={x} />
+                            displayItems.map(x =>
+                                <FileItem key={x.name} apiPrefix={props.apiPrefix} fileNode={x} />
                             )
                         }
                     </Content>

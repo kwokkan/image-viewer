@@ -91683,7 +91683,27 @@ exports.FileNodeType = FileNodeType;
   FileNodeType[FileNodeType["Directory"] = 0] = "Directory";
   FileNodeType[FileNodeType["File"] = 1] = "File";
 })(FileNodeType || (exports.FileNodeType = FileNodeType = {}));
-},{}],"Y3SL":[function(require,module,exports) {
+},{}],"JdUR":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.FileItem = FileItem;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function FileItem(props) {
+  var src = "".concat(props.apiPrefix, "view/").concat(props.fileNode.path);
+  return _react.default.createElement("img", {
+    className: "max-width",
+    src: src,
+    alt: props.fileNode.name
+  });
+}
+},{"react":"n8MK"}],"Y3SL":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -91769,6 +91789,8 @@ var _rsuite = require("rsuite");
 
 var _FileNodeType = require("../types/FileNodeType");
 
+var _FileItem = require("./FileItem");
+
 var _NagivationMenu = require("./NagivationMenu");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
@@ -91810,8 +91832,8 @@ function App(props) {
 
   var _useState3 = (0, _react.useState)([]),
       _useState4 = _slicedToArray(_useState3, 2),
-      displayUrls = _useState4[0],
-      setDisplayUrls = _useState4[1];
+      displayItems = _useState4[0],
+      setDisplayItems = _useState4[1];
 
   (0, _react.useEffect)(function () {
     function init() {
@@ -91853,18 +91875,16 @@ function App(props) {
 
   var onFileNodeSelected = function onFileNodeSelected(fileNode) {
     console.debug(fileNode);
-    setDisplayUrls([]);
+    setDisplayItems([]);
     document.title = fileNode.path + " - Image Viewer";
     window.scrollTo(0, 0);
 
     if (fileNode.type == _FileNodeType.FileNodeType.Directory) {
       if (fileNode.children) {
-        setDisplayUrls(fileNode.children.map(function (x) {
-          return x.path;
-        }));
+        setDisplayItems(fileNode.children);
       }
     } else {
-      setDisplayUrls([fileNode.path]);
+      setDisplayItems([fileNode]);
     }
   };
 
@@ -91873,16 +91893,15 @@ function App(props) {
   }, _react.default.createElement(_rsuite.Container, null, _react.default.createElement(_NagivationMenu.NavigationMenu, {
     items: files,
     onFileNodeSelected: onFileNodeSelected
-  }), _react.default.createElement(_rsuite.Container, null, _react.default.createElement(_rsuite.Content, null, displayUrls.length == 0 ? _react.default.createElement("div", null, "Nothing to display") : displayUrls.map(function (x) {
-    return _react.default.createElement("img", {
-      key: x,
-      className: "max-width",
-      src: "".concat(props.apiPrefix, "view/").concat(x),
-      alt: x
+  }), _react.default.createElement(_rsuite.Container, null, _react.default.createElement(_rsuite.Content, null, displayItems.length == 0 ? _react.default.createElement("div", null, "Nothing to display") : displayItems.map(function (x) {
+    return _react.default.createElement(_FileItem.FileItem, {
+      key: x.name,
+      apiPrefix: props.apiPrefix,
+      fileNode: x
     });
   })))));
 }
-},{"react":"n8MK","rsuite":"JnKi","../types/FileNodeType":"awbP","./NagivationMenu":"Y3SL"}],"wGC4":[function(require,module,exports) {
+},{"react":"n8MK","rsuite":"JnKi","../types/FileNodeType":"awbP","./FileItem":"JdUR","./NagivationMenu":"Y3SL"}],"wGC4":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
