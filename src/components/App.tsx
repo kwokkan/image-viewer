@@ -39,19 +39,18 @@ export function App(props: IAppProps): JSX.Element {
     const onFileNodeSelected = (fileNode: IFileNode) => {
         console.debug(fileNode);
 
+        setDisplayUrls([]);
+        document.title = fileNode.path + " - Image Viewer";
+        window.scrollTo(0, 0);
+
         if (fileNode.type == FileNodeType.Directory) {
             if (fileNode.children) {
                 setDisplayUrls(fileNode.children.map(x => x.path));
-            }
-            else {
-                setDisplayUrls([]);
             }
         }
         else {
             setDisplayUrls([fileNode.path]);
         }
-
-        document.title = fileNode.path + " - Image Viewer";
     };
 
     return (

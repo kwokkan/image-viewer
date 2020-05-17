@@ -91853,20 +91853,19 @@ function App(props) {
 
   var onFileNodeSelected = function onFileNodeSelected(fileNode) {
     console.debug(fileNode);
+    setDisplayUrls([]);
+    document.title = fileNode.path + " - Image Viewer";
+    window.scrollTo(0, 0);
 
     if (fileNode.type == _FileNodeType.FileNodeType.Directory) {
       if (fileNode.children) {
         setDisplayUrls(fileNode.children.map(function (x) {
           return x.path;
         }));
-      } else {
-        setDisplayUrls([]);
       }
     } else {
       setDisplayUrls([fileNode.path]);
     }
-
-    document.title = fileNode.path + " - Image Viewer";
   };
 
   return _react.default.createElement("div", {
