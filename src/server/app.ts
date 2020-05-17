@@ -1,12 +1,32 @@
 import * as express from "express";
 import * as path from "path";
 import * as process from "process";
+import * as yargs from "yargs";
 import { IFileNode } from "../types/IFileNode";
 import { getFileNodes } from "./fileNodeHelper";
 
+const argv = yargs
+    .option("basePath", {
+        alias: "bp",
+        default: path.resolve(process.cwd(), "src"),
+        description: "Base path to serve files from",
+        string: true,
+        type: "string"
+    })
+    .option("port", {
+        alias: "p",
+        default: 12345,
+        description: "Port number to listen on",
+        number: true,
+        type: "number"
+    })
+    .help()
+    .alias("help", "h")
+    .argv;
+
 const app = express();
-const port = 12345;
-const basePath = path.resolve(process.cwd(), "src");
+const port = argv.port;
+const basePath = argv.basePath;
 
 app.use(express.static("dist"));
 
@@ -26,4 +46,11 @@ app.get("/api/view/*?", async (req, res) => {
     res.sendFile(currentPath);
 });
 
-app.listen(port, () => console.log("App is listening on port " + port));
+app.listen(port, () => {
+    console.log("Starting viewer ...");
+
+    console.table({
+        basePath,
+        port
+    });
+});
