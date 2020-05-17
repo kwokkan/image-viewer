@@ -91729,9 +91729,10 @@ function NavigationMenu(props) {
 
   return _react.default.createElement(_rsuite.Sidebar, {
     collapsible: true,
-    width: expanded ? 260 : 56
+    width: expanded ? '40%' : 56
   }, _react.default.createElement(_rsuite.Sidenav, {
-    expanded: expanded
+    expanded: expanded,
+    appearance: "subtle"
   }, _react.default.createElement(_rsuite.Sidenav.Body, null, _react.default.createElement(_rsuite.Nav, null, _react.default.createElement(_rsuite.Nav.Item, {
     eventKey: "1",
     onClick: sideBarClick,
@@ -91742,6 +91743,7 @@ function NavigationMenu(props) {
   }, "Viewer"), _react.default.createElement(_rsuite.Dropdown, {
     eventKey: "2",
     title: "Files",
+    placement: "rightStart",
     icon: _react.default.createElement(_rsuite.Icon, {
       icon: "folder"
     })
@@ -91863,6 +91865,8 @@ function App(props) {
     } else {
       setDisplayUrls([fileNode.path]);
     }
+
+    document.title = fileNode.path + " - Image Viewer";
   };
 
   return _react.default.createElement("div", {

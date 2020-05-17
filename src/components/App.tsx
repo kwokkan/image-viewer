@@ -50,6 +50,8 @@ export function App(props: IAppProps): JSX.Element {
         else {
             setDisplayUrls([fileNode.path]);
         }
+
+        document.title = fileNode.path + " - Image Viewer";
     };
 
     return (

@@ -21,15 +21,15 @@ export function NavigationMenu(props: INavigationMenuProps): JSX.Element {
     };
 
     return (
-        <Sidebar collapsible width={expanded ? 260 : 56}>
-            <Sidenav expanded={expanded}>
+        <Sidebar collapsible width={expanded ? '40%' : 56}>
+            <Sidenav expanded={expanded} appearance="subtle">
                 <Sidenav.Body>
                     <Nav>
                         <Nav.Item eventKey="1" onClick={sideBarClick} active icon={<Icon icon={expanded ? "close" : "bars"} />}>
                             Viewer
                         </Nav.Item>
 
-                        <Dropdown eventKey="2" title="Files" icon={<Icon icon="folder" />}>
+                        <Dropdown eventKey="2" title="Files" placement="rightStart" icon={<Icon icon="folder" />}>
                             <Dropdown.Item divider />
                             <Dropdown.Item >
                                 <Tree data={props.items} defaultExpandAll onSelect={sidebarTreeOnSelect} />
