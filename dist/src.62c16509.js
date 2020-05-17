@@ -91747,33 +91747,31 @@ function NavigationMenu(props) {
     }
   };
 
-  return _react.default.createElement(_rsuite.Sidebar, {
-    collapsible: true,
-    width: expanded ? '40%' : 56
-  }, _react.default.createElement(_rsuite.Sidenav, {
-    expanded: expanded,
-    appearance: "subtle"
-  }, _react.default.createElement(_rsuite.Sidenav.Body, null, _react.default.createElement(_rsuite.Nav, null, _react.default.createElement(_rsuite.Nav.Item, {
-    eventKey: "1",
-    onClick: sideBarClick,
-    active: true,
+  var buttons = _react.default.createElement(_rsuite.ButtonToolbar, {
+    className: "fixed z-top m-2"
+  }, _react.default.createElement(_rsuite.IconButton, {
+    circle: true,
+    size: "lg",
+    appearance: "subtle",
     icon: _react.default.createElement(_rsuite.Icon, {
       icon: expanded ? "close" : "bars"
-    })
-  }, "Viewer"), _react.default.createElement(_rsuite.Dropdown, {
-    eventKey: "2",
-    title: "Files",
-    placement: "rightStart",
-    icon: _react.default.createElement(_rsuite.Icon, {
-      icon: "folder"
-    })
-  }, _react.default.createElement(_rsuite.Dropdown.Item, {
-    divider: true
-  }), _react.default.createElement(_rsuite.Dropdown.Item, null, _react.default.createElement(_rsuite.Tree, {
+    }),
+    onClick: sideBarClick
+  }));
+
+  return _react.default.createElement(_react.Fragment, null, buttons, _react.default.createElement(_rsuite.Drawer, {
+    show: expanded,
+    placement: "left",
+    backdrop: true,
+    onHide: sideBarClick
+  }, buttons, _react.default.createElement("div", {
+    className: "m-2"
+  }), _react.default.createElement(_rsuite.Drawer.Body, null, _react.default.createElement(_rsuite.Tree, {
     data: props.items,
     defaultExpandAll: true,
+    virtualized: true,
     onSelect: sidebarTreeOnSelect
-  })))))));
+  }))));
 }
 },{"react":"n8MK","rsuite":"JnKi"}],"UJ63":[function(require,module,exports) {
 "use strict";

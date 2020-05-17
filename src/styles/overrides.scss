@@ -3,6 +3,7 @@
     max-width: 100%;
 }
 
-.rs-sidebar {
-    position: fixed;
+.rs-drawer-open {
+    // remove 17px set on the body
+    padding-right: unset !important;
 }

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Dropdown, Icon, Nav, Sidebar, Sidenav, Tree } from "rsuite";
+import React, { Fragment, useState } from "react";
+import { ButtonToolbar, Drawer, Icon, IconButton, Tree } from "rsuite";
 import { ItemDataType } from "rsuite/lib/@types/common";
 import { IFileNode } from "../types/IFileNode";
 
@@ -21,24 +21,26 @@ export function NavigationMenu(props: INavigationMenuProps): JSX.Element {
         }
     };
 
-    return (
-        <Sidebar collapsible width={expanded ? '40%' : 56}>
-            <Sidenav expanded={expanded} appearance="subtle">
-                <Sidenav.Body>
-                    <Nav>
-                        <Nav.Item eventKey="1" onClick={sideBarClick} active icon={<Icon icon={expanded ? "close" : "bars"} />}>
-                            Viewer
-                        </Nav.Item>
+    const buttons =
+        <ButtonToolbar className="fixed z-top m-2">
+            <IconButton circle size="lg" appearance="subtle" icon={<Icon icon={expanded ? "close" : "bars"} />} onClick={sideBarClick} />
+        </ButtonToolbar>
+        ;
 
-                        <Dropdown eventKey="2" title="Files" placement="rightStart" icon={<Icon icon="folder" />}>
-                            <Dropdown.Item divider />
-                            <Dropdown.Item >
-                                <Tree data={props.items} defaultExpandAll onSelect={sidebarTreeOnSelect} />
-                            </Dropdown.Item>
-                        </Dropdown>
-                    </Nav>
-                </Sidenav.Body>
-            </Sidenav>
-        </Sidebar>
+    return (
+        <Fragment>
+            {buttons}
+
+            <Drawer show={expanded} placement="left" backdrop={true} onHide={sideBarClick}>
+                {buttons}
+
+                <div className="m-2">
+                </div>
+
+                <Drawer.Body>
+                    <Tree data={props.items} defaultExpandAll virtualized onSelect={sidebarTreeOnSelect} />
+                </Drawer.Body>
+            </Drawer>
+        </Fragment>
     );
 }

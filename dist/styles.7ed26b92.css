@@ -2,16 +2,32 @@
   max-width: 100%;
 }
 
-.rs-sidebar {
-  position: fixed;
+.rs-drawer-open {
+  padding-right: unset !important;
 }
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 .max-width {
   max-width: 100%;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.z-top {
+  z-index: 9999;
+}
+
+.m-2 {
+  margin: 0.5rem;
 }
 
 /*# sourceMappingURL=/styles.7ed26b92.css.map */

@@ -4,6 +4,23 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-y: scroll;
+}
+
 .max-width {
     max-width: 100%;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.z-top {
+    // appear over the drawer with z-index 1050
+    z-index: 9999;
+}
+
+.m-2 {
+    margin: 0.5rem;
 }
