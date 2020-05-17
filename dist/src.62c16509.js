@@ -91893,7 +91893,7 @@ function App(props) {
     onFileNodeSelected: onFileNodeSelected
   }), _react.default.createElement(_rsuite.Container, null, _react.default.createElement(_rsuite.Content, {
     className: "m-auto"
-  }, displayItems.length == 0 ? _react.default.createElement("div", null, "Nothing to display") : displayItems.map(function (x) {
+  }, displayItems.map(function (x) {
     return _react.default.createElement(_FileItem.FileItem, {
       key: x.name,
       apiPrefix: props.apiPrefix,

@@ -61,9 +61,7 @@ export function App(props: IAppProps): JSX.Element {
                 <NavigationMenu items={files} onFileNodeSelected={onFileNodeSelected} />
                 <Container>
                     <Content className="m-auto">
-                        {displayItems.length == 0 ?
-                            <div>Nothing to display</div>
-                            :
+                        {
                             displayItems.map(x =>
                                 <FileItem key={x.name} apiPrefix={props.apiPrefix} fileNode={x} />
                             )
