@@ -5027,10 +5027,10 @@ rsuite-table@^5.6.0:
     lodash "^4.17.21"
     react-is "^17.0.2"
 
-rsuite@5.16.5:
-  version "5.16.5"
-  resolved "https://registry.yarnpkg.com/rsuite/-/rsuite-5.16.5.tgz#5ee98c31a1e51feff3e5f4b941b1fd2359507546"
-  integrity sha512-ExXc45nuZDj209S7J9wjv9JBMltDBigdNzTW6PA3lfo24tt26xUXY8174OxSKcxB68A9Tw1RBSaBOl5gmcjI2A==
+rsuite@5.16.6:
+  version "5.16.6"
+  resolved "https://registry.yarnpkg.com/rsuite/-/rsuite-5.16.6.tgz#379f483524a1c15f836decc4593b6e4a66543b16"
+  integrity sha512-fRTuZHwaznmkbq4A54hP0bAW00GPo+NLKm6R68RpmP8uZDspudeMDeygwSzbM4hVjtZ0y9WmyF6bbd/uc7a2zw==
   dependencies:
     "@babel/runtime" "^7.8.4"
     "@juggle/resize-observer" "^3.3.1"
