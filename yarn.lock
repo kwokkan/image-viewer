@@ -822,10 +822,10 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@juggle/resize-observer@^3.3.1":
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/@juggle/resize-observer/-/resize-observer-3.3.1.tgz#b50a781709c81e10701004214340f25475a171a0"
-  integrity sha512-zMM9Ds+SawiUkakS7y94Ymqx+S0ORzpG3frZirN3l+UlXUmSUR7hF4wxCVqW+ei94JzV5kt0uXBcoOEAuiydrw==
+"@juggle/resize-observer@^3.3.1", "@juggle/resize-observer@^3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@juggle/resize-observer/-/resize-observer-3.4.0.tgz#08d6c5e20cf7e4cc02fd181c4b0c225cd31dbb60"
+  integrity sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
@@ -975,7 +975,7 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.0.1.tgz#5d93e0a099cd0acd5ef3d5bde3c086e1f49ff68c"
   integrity sha512-FAYBGwC+W6F9+huFIDtn43cpy7+SzG+atzRiTfdp3inUKL2hXnd4rG8hylJLIh4+hqrQy1P17kvJByE/z825hA==
 
-"@types/prop-types@*", "@types/prop-types@^15.7.4":
+"@types/prop-types@*", "@types/prop-types@^15.7.5":
   version "15.7.5"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.5.tgz#5f19d2b85a98e9558036f6a3cacc8819420f05cf"
   integrity sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==
@@ -2309,10 +2309,10 @@ dom-helpers@^5.1.3:
     "@babel/runtime" "^7.8.7"
     csstype "^3.0.2"
 
-dom-lib@^3.1.2:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/dom-lib/-/dom-lib-3.1.2.tgz#b9667a4c3435e522f818704c821418614625b929"
-  integrity sha512-FKw/w51guhTwiSnyCQKTxEwglnZG7Q1qJO62asKwedcqCCHwrwQP8DnMPBTXL9y3JTePFDaPS95GLha/Q9nd/w==
+dom-lib@^3.1.3:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/dom-lib/-/dom-lib-3.1.3.tgz#c6c74238bf6352e68cd570509cf985ac2ec4ed80"
+  integrity sha512-66NzehAJZM5HrH/2FW6C0tgaMIywDF5I9n7PWgvdSciohlYQbCFcSf5XA6hhIqQdFbfrnZDD8NGLo9pDRzO5hQ==
   dependencies:
     "@babel/runtime" "^7.16.0"
 
@@ -5014,38 +5014,38 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
-rsuite-table@^5.7.1:
-  version "5.7.1"
-  resolved "https://registry.yarnpkg.com/rsuite-table/-/rsuite-table-5.7.1.tgz#daaeb36ecab4bb1d9006fc2e565a690b869a5c80"
-  integrity sha512-TD38Dm1qYwnPHzYr8enZa36WEymElKyRG1qtnaf9aBtWyEROEsHh1xOU8btHy7+nxZFqh/Jr6gw3dQ1KIGX5Uw==
+rsuite-table@^5.7.2:
+  version "5.7.2"
+  resolved "https://registry.yarnpkg.com/rsuite-table/-/rsuite-table-5.7.2.tgz#784d34235fb9e070691af9a7a08adcca1fdc2c74"
+  integrity sha512-JwfxAR8lXVXM9PRQGJMbayciMcVFpHWExAhfY53h6JYKC7LfPeBx/Z6k4P7PO0grFkVGBdFW3ZgHxhCD1ur/eA==
   dependencies:
     "@babel/runtime" "^7.12.5"
     "@juggle/resize-observer" "^3.3.1"
     "@rsuite/icons" "^1.0.0"
     classnames "^2.3.1"
-    dom-lib "^3.1.2"
+    dom-lib "^3.1.3"
     lodash "^4.17.21"
     react-is "^17.0.2"
 
-rsuite@5.19.0:
-  version "5.19.0"
-  resolved "https://registry.yarnpkg.com/rsuite/-/rsuite-5.19.0.tgz#94c0b04bd3c26ddb529fd1467c2a2a8558583f60"
-  integrity sha512-KQD48UT2HJec+VNzcsrGlo65+OMas7kOjJnxkwR3GsiIugw2aQ9o2JUBmoaJFxhbAnwv1hjJ73ZgW3MH3Wo/Pw==
+rsuite@5.19.1:
+  version "5.19.1"
+  resolved "https://registry.yarnpkg.com/rsuite/-/rsuite-5.19.1.tgz#2ad9eee7a433124c01f85a88bf85a4d01dcd503a"
+  integrity sha512-+h5c2yZq2jlHvYzY4/WUbk0De8DFpeoSJRUmmcbAygq65BJJNK+Of8ZsSBfBag7sE1/TLnBkseUK+cVSdZHuhA==
   dependencies:
     "@babel/runtime" "^7.18.9"
-    "@juggle/resize-observer" "^3.3.1"
+    "@juggle/resize-observer" "^3.4.0"
     "@rsuite/icons" "^1.0.2"
     "@types/chai" "^4.3.3"
     "@types/lodash" "^4.14.184"
-    "@types/prop-types" "^15.7.4"
+    "@types/prop-types" "^15.7.5"
     "@types/react-virtualized" "^9.21.11"
     classnames "^2.3.1"
     date-fns "^2.29.2"
-    dom-lib "^3.1.2"
+    dom-lib "^3.1.3"
     lodash "^4.17.11"
     prop-types "^15.8.1"
     react-virtualized "^9.22.3"
-    rsuite-table "^5.7.1"
+    rsuite-table "^5.7.2"
     schema-typed "^2.0.3"
 
 safe-buffer@5.2.1, safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@^5.1.2, safe-buffer@^5.2.0, safe-buffer@~5.2.0:
