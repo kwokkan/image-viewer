@@ -752,10 +752,10 @@
     "@babel/types" "^7.4.4"
     esutils "^2.0.2"
 
-"@babel/runtime@^7.12.5", "@babel/runtime@^7.16.0", "@babel/runtime@^7.18.9", "@babel/runtime@^7.4.4", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7":
-  version "7.19.0"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.19.0.tgz#22b11c037b094d27a8a2504ea4dcff00f50e2259"
-  integrity sha512-eR8Lo9hnDS7tqkO7NsV+mKvCmv5boaXFSZ70DnfhcgiEne8hv9oCEd36Klw74EtizEqLsy4YnW8UWwpBVolHZA==
+"@babel/runtime@^7.12.5", "@babel/runtime@^7.16.0", "@babel/runtime@^7.19.0", "@babel/runtime@^7.4.4", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7":
+  version "7.19.4"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.19.4.tgz#a42f814502ee467d55b38dd1c256f53a7b885c78"
+  integrity sha512-EXpLCrk55f+cYqmHsSR+yD/0gAIMxxA9QK9lnQWzhMCvt+YmoBN7Zx94s++Kv0+unHk39vxNO8t+CMA2WSS3wA==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -2186,7 +2186,7 @@ data-urls@^1.1.0:
     whatwg-mimetype "^2.2.0"
     whatwg-url "^7.0.0"
 
-date-fns@^2.29.2:
+date-fns@^2.29.3:
   version "2.29.3"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.29.3.tgz#27402d2fc67eb442b511b70bbdf98e6411cd68a8"
   integrity sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==
@@ -5027,12 +5027,12 @@ rsuite-table@^5.7.2:
     lodash "^4.17.21"
     react-is "^17.0.2"
 
-rsuite@5.19.1:
-  version "5.19.1"
-  resolved "https://registry.yarnpkg.com/rsuite/-/rsuite-5.19.1.tgz#2ad9eee7a433124c01f85a88bf85a4d01dcd503a"
-  integrity sha512-+h5c2yZq2jlHvYzY4/WUbk0De8DFpeoSJRUmmcbAygq65BJJNK+Of8ZsSBfBag7sE1/TLnBkseUK+cVSdZHuhA==
+rsuite@5.20.0:
+  version "5.20.0"
+  resolved "https://registry.yarnpkg.com/rsuite/-/rsuite-5.20.0.tgz#73cddc857aba69c159ede52953f267267ac7b8ec"
+  integrity sha512-DOfPq1n4K4nkwYqer4Ky+Pe3MQQYlvIxVwl08U4bCwB3cYVHcBbiv3YHNL6v1f1Ndr8AUvEmdVgAoLTS7EVCVw==
   dependencies:
-    "@babel/runtime" "^7.18.9"
+    "@babel/runtime" "^7.19.0"
     "@juggle/resize-observer" "^3.4.0"
     "@rsuite/icons" "^1.0.2"
     "@types/chai" "^4.3.3"
@@ -5040,7 +5040,7 @@ rsuite@5.19.1:
     "@types/prop-types" "^15.7.5"
     "@types/react-virtualized" "^9.21.11"
     classnames "^2.3.1"
-    date-fns "^2.29.2"
+    date-fns "^2.29.3"
     dom-lib "^3.1.3"
     lodash "^4.17.11"
     prop-types "^15.8.1"
