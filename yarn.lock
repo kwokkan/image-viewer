@@ -752,12 +752,12 @@
     "@babel/types" "^7.4.4"
     esutils "^2.0.2"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.12.5", "@babel/runtime@^7.16.0", "@babel/runtime@^7.19.0", "@babel/runtime@^7.4.4", "@babel/runtime@^7.8.4":
-  version "7.19.4"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.19.4.tgz#a42f814502ee467d55b38dd1c256f53a7b885c78"
-  integrity sha512-EXpLCrk55f+cYqmHsSR+yD/0gAIMxxA9QK9lnQWzhMCvt+YmoBN7Zx94s++Kv0+unHk39vxNO8t+CMA2WSS3wA==
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.12.5", "@babel/runtime@^7.16.0", "@babel/runtime@^7.19.4", "@babel/runtime@^7.4.4", "@babel/runtime@^7.8.4":
+  version "7.20.1"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.20.1.tgz#1148bb33ab252b165a06698fde7576092a78b4a9"
+  integrity sha512-mrzLkl6U9YLF8qpqI7TB82PESyEGjm/0Ly91jG575eVxMMlb8fYfOXFZIJ8XfLrJZQbm7dlKry2bJmXBUEkdFg==
   dependencies:
-    regenerator-runtime "^0.13.4"
+    regenerator-runtime "^0.13.10"
 
 "@babel/template@^7.4.4", "@babel/template@^7.8.3", "@babel/template@^7.8.6":
   version "7.8.6"
@@ -4820,10 +4820,10 @@ regenerator-runtime@^0.11.0:
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
   integrity sha512-MguG95oij0fC3QV3URf4V2SDYGJhJnJGqvIIgdECeODCT98wSWDAJ94SSuVpYQUoTcGUIL6L4yNB7j1DFFHSBg==
 
-regenerator-runtime@^0.13.4:
-  version "0.13.5"
-  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.5.tgz#d878a1d094b4306d10b9096484b33ebd55e26697"
-  integrity sha512-ZS5w8CpKFinUzOwW3c83oPeVXoNsrLsaCoLtJvAClH135j/R77RuymhiSErhm2lKcwSCIpmvIWSbDkIfAqKQlA==
+regenerator-runtime@^0.13.10:
+  version "0.13.10"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.10.tgz#ed07b19616bcbec5da6274ebc75ae95634bfc2ee"
+  integrity sha512-KepLsg4dU12hryUO7bp/axHAKvwGOCV0sGloQtpagJ12ai+ojVDqkeGSiRX1zlq+kjIMZ1t7gpze+26QqtdGqw==
 
 regenerator-transform@^0.14.2:
   version "0.14.4"
@@ -4987,10 +4987,10 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
-rsuite-table@^5.7.2:
-  version "5.7.2"
-  resolved "https://registry.yarnpkg.com/rsuite-table/-/rsuite-table-5.7.2.tgz#784d34235fb9e070691af9a7a08adcca1fdc2c74"
-  integrity sha512-JwfxAR8lXVXM9PRQGJMbayciMcVFpHWExAhfY53h6JYKC7LfPeBx/Z6k4P7PO0grFkVGBdFW3ZgHxhCD1ur/eA==
+rsuite-table@^5.8.0:
+  version "5.8.0"
+  resolved "https://registry.yarnpkg.com/rsuite-table/-/rsuite-table-5.8.0.tgz#a9ed715939c410e826197191586cb7d0ec057242"
+  integrity sha512-ZqRYbH8JM8hslN5eU6lGoyLjbHL9un8TMPNdk/4wyYxAM3k6EMKP21oJdNb3YHCy8U1HbWc8qS6Qn/nzCrGsDw==
   dependencies:
     "@babel/runtime" "^7.12.5"
     "@juggle/resize-observer" "^3.3.1"
@@ -5000,12 +5000,12 @@ rsuite-table@^5.7.2:
     lodash "^4.17.21"
     react-is "^17.0.2"
 
-rsuite@5.21.0:
-  version "5.21.0"
-  resolved "https://registry.yarnpkg.com/rsuite/-/rsuite-5.21.0.tgz#e20d2a1c53a69b598348ad8c8afde40d3373c4e2"
-  integrity sha512-mSEGFRHzVMPmEY7lj+gCmwsJxITDo/WarbJILf+ohQicQYRI/RdVLavoHsBWeg6Qen4Y/o1Ts89KxokA7igEuA==
+rsuite@5.22.0:
+  version "5.22.0"
+  resolved "https://registry.yarnpkg.com/rsuite/-/rsuite-5.22.0.tgz#0b98de236f3c71abe6015375dae54dd3464e02bb"
+  integrity sha512-sqb1v0M0K7N+KLsv63dqgRAthcxIAYfJelncUsE7zq7/5gxE98v7cIaKhtQ4AfXIFVfhJSFSdPGq2J0Oh++X1A==
   dependencies:
-    "@babel/runtime" "^7.19.0"
+    "@babel/runtime" "^7.19.4"
     "@juggle/resize-observer" "^3.4.0"
     "@rsuite/icons" "^1.0.2"
     "@types/chai" "^4.3.3"
@@ -5018,7 +5018,7 @@ rsuite@5.21.0:
     lodash "^4.17.11"
     prop-types "^15.8.1"
     react-window "^1.8.7"
-    rsuite-table "^5.7.2"
+    rsuite-table "^5.8.0"
     schema-typed "^2.0.3"
 
 safe-buffer@5.2.1, safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@^5.1.2, safe-buffer@^5.2.0, safe-buffer@~5.2.0:
