@@ -18,7 +18,7 @@
     "rsuite": "5.23.2"
   },
   "devDependencies": {
-    "@types/express": "4.17.14",
+    "@types/express": "4.17.15",
     "@types/node": "18.11.15",
     "@types/react": "18.0.26",
     "@types/react-dom": "18.0.9",
