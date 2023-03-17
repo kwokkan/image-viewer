@@ -4987,10 +4987,10 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
-rsuite-table@^5.8.2:
-  version "5.8.2"
-  resolved "https://registry.yarnpkg.com/rsuite-table/-/rsuite-table-5.8.2.tgz#3ddfbcd8fc99e0653a81484fe33b13fc7a1e843b"
-  integrity sha512-rHNMTwQaaesbH5t3ZvZ37mVRLLL+M7UGdTTALOp9HIAUaECM5W/DEcFVWeaEJQFe3U/C58lj0zB41R3VgsNRKA==
+rsuite-table@^5.10.1:
+  version "5.10.1"
+  resolved "https://registry.yarnpkg.com/rsuite-table/-/rsuite-table-5.10.1.tgz#69a5828a38edfb586651b434a58f973b819a85f5"
+  integrity sha512-95vB4mPhxPKkq+EfYgQFVJ3BWDbRIVUs59hMwnYXZhiLKY1fY/cJd+ETeB725Qqcj7/AN3tDySo+CIKWLp1FAA==
   dependencies:
     "@babel/runtime" "^7.12.5"
     "@juggle/resize-observer" "^3.3.1"
@@ -5000,10 +5000,10 @@ rsuite-table@^5.8.2:
     lodash "^4.17.21"
     react-is "^17.0.2"
 
-rsuite@5.26.1:
-  version "5.26.1"
-  resolved "https://registry.yarnpkg.com/rsuite/-/rsuite-5.26.1.tgz#b0df55732f65c374646ba7b669a0fc303416a463"
-  integrity sha512-jRJCoCcHJJN7X7h/fPrPUtBz8+ZGtNsJ1jqECOctu4A4mZ0Fo40noqPMohJdyc17uG7Pms/mCnGmQw7RronOFw==
+rsuite@5.28.3:
+  version "5.28.3"
+  resolved "https://registry.yarnpkg.com/rsuite/-/rsuite-5.28.3.tgz#2ebc3f8eff9b080a17989ec352df0771763f19a4"
+  integrity sha512-1zOlIdb84zzhtguZwqs/efyB4tqOXFwURiBb4c+mPAu1TiG91FyvWwclaBdcxc5mPv/GMvd/4hcEGfQKuLIodg==
   dependencies:
     "@babel/runtime" "^7.20.1"
     "@juggle/resize-observer" "^3.4.0"
@@ -5018,8 +5018,8 @@ rsuite@5.26.1:
     lodash "^4.17.11"
     prop-types "^15.8.1"
     react-window "^1.8.8"
-    rsuite-table "^5.8.2"
-    schema-typed "^2.0.3"
+    rsuite-table "^5.10.1"
+    schema-typed "^2.1.2"
 
 safe-buffer@5.2.1, safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@^5.1.2, safe-buffer@^5.2.0, safe-buffer@~5.2.0:
   version "5.2.1"
@@ -5071,12 +5071,10 @@ scheduler@^0.23.0:
   dependencies:
     loose-envify "^1.1.0"
 
-schema-typed@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/schema-typed/-/schema-typed-2.0.3.tgz#bfd84b31fbb2d13e748736637281032d8bcb2be8"
-  integrity sha512-4KckVnJjTtVugYpSAoQrcH4quE4yIVTvI/nHEqtwdceBr/ZCuH2LfV8/gaZFrYU7cwwyufLKaswt28aqQ1T9ww==
-  dependencies:
-    "@babel/runtime" "^7.16.0"
+schema-typed@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/schema-typed/-/schema-typed-2.1.2.tgz#d2b013d356f4f422e4990f82dd0374b92493f03b"
+  integrity sha512-5BCduF1qt9ch2kEqc3/4Jj0mZfUzh+E8iIto5AViOwgReCho2yiT1LlQJ/5KQ1MTkthD8EDokLA/BlhbYow7Bw==
 
 semver@7.0.0:
   version "7.0.0"
